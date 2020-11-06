@@ -51,7 +51,7 @@ public class ImprovedEuler {
             //Compute Improved Euler method by formulas in comments below
             for (int i = 1; i < Xi.length; ++i) {
                 double k1 = Main.F(Xi[i - 1], Yi[i - 1]); //K1i =F(Xi, Yi)
-                double k2 = Main.F(Xi[i] + h, Yi[i - 1] + h * k1); //K2i = F(Xi + h, Yi + h*K1i)
+                double k2 = Main.F(Xi[i], Yi[i - 1] + h * k1); //K2i = F(Xi, Yi + h*K1i)
                 Yi[i] = Yi[i - 1] + (h / 2) * (k1 + k2); //Yi+1 = Yi + h/2 (K1i + K2i)
                 //Add Xi and Yi to Improved Euler series
                 improvedSeries.getData().add(new XYChart.Data <Number, Number> (Xi[i], Yi[i]));
